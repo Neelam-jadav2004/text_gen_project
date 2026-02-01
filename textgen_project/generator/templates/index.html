@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LSTM Text Generator</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+<div class="container">
+    <h2> LSTM Text Generator</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="seed" placeholder="Enter seed text">
+        <button type="submit">Generate</button>
+    </form>
+
+    {% if output %}
+    <div class="output">
+        <b>Generated Text:</b>
+        <p>{{ output }}</p>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
